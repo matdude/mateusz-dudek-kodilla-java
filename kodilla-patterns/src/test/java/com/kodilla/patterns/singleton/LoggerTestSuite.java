@@ -9,6 +9,7 @@ public class LoggerTestSuite {
     void testGetLastLog() {
         //Given
         Logger logger = Logger.LOG;
+        logger.log("Log");
         logger.log("log1");
         //When
         String result = logger.getLastLog();

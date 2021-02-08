@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.flights;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class FlightApp {
@@ -18,9 +19,12 @@ public class FlightApp {
 
         Set<Flight> flightsFromWroclaw = flightFinder.findFlightFromAirport("Wroclaw");
         Set<Flight> flightsToTokyo = flightFinder.findFlightToAirport("Tokyo");
+        List<List<Flight>> stopOver = flightFinder.findStopoverAirport("Wroclaw", "Tokyo");
 
 
-        System.out.println("Flights from Wroclaw: " + flightsFromWroclaw);
-        System.out.println("Flights to Tokyo: " + flightsToTokyo);
+//        System.out.println("Flights from Wroclaw: " + flightsFromWroclaw);
+//        System.out.println("Flights to Tokyo: " + flightsToTokyo);
+        System.out.println(stopOver);
+
     }
 }
