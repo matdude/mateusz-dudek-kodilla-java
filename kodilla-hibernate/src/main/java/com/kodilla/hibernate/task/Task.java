@@ -61,4 +61,5 @@ public class Task {
     private void setDuration(int duration) {
         this.duration = duration;
     }
+
 }
