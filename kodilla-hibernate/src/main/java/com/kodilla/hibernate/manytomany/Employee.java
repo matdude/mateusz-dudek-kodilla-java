@@ -1,13 +1,16 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 @NamedQuery(
-        name = "Employee.selectEmployeeName",
-        query = "FROM Employee WHERE lastname LIKE '%Smith%'"
+        name = "Employee.selectEmployeeNamePart",
+        query = "FROM Employee WHERE lastname LIKE concat('%', :part, '%')"
 )
 @Entity
 @Table(name = "EMPLOYEES")
