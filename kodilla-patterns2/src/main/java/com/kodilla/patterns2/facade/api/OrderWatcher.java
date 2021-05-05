@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 public class OrderWatcher {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderWatcher.class);
 
-    @Before(value = "execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))" +
-            "&& args(theNumber) && target(object)", argNames = "theNumber,object")
-    public void logEvent(Long theNumber, Object object) {
-        LOGGER.info("Class: " + object.getClass().getName() + ", Args: " + theNumber);
+    @Before(value = "execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))")
+    public void logEvent() {
+        LOGGER.info("Method processOrder is running");
 
     }
 }
